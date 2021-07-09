@@ -1,0 +1,79 @@
+.download-container{
+    min-height: 100vh;
+    width: 100%;
+    margin-top: 5rem;
+
+    @media screen and(max-width:868px){
+        margin-top: 2rem;
+     }
+
+    .wrapper{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        @media screen and(max-width:768px){
+            display: flex;
+            flex-direction: column-reverse;
+         }
+
+
+        .left{
+            @media screen and(max-width:868px){
+                margin-top: 4rem;
+             }
+            img{
+                width: 650px; 
+                height: 650px;
+
+                @media screen and (max-width: 1150px){
+                    width: 550px; 
+                    height: 550px;
+                }
+
+                @media screen and(max-width:768px){
+                    width: 450px; 
+                    height: 450px;
+    
+                 }
+            }
+        }
+
+        .right{
+            width: 550px;
+
+            @media screen and (max-width: 1150px){
+                width: 450px; 
+            }
+
+            @media screen and(max-width:768px){
+                width: 400px;
+                text-align: center;
+
+             }
+            
+            h1{
+                color: #0099ff;
+            }
+            p{
+                margin: 2rem 0;
+                color: #969696;
+            }
+            .btn-about{
+                border: 2px solid #0099ff;
+                padding: 0.6rem 1.3rem;
+                border-radius: 10px;
+                color: #0099ff;
+                text-decoration: none;
+                transition: 0.3s ease-in-out;
+                box-shadow: 5px 10px 30px rgba(2, 238, 255, 0.336);
+
+                &:hover{
+                    background-color: transparent;
+                    background-color: #0099ff;
+                    color: #fff;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,16 @@
+.features-container{
+    min-height: 100vh;
+    width: 100%;
+    margin-top: 10rem;
+
+    .card-wrapper{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        @media screen and(max-width:768px){
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}

@@ -1,23 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect,useState } from "react";
+import { Navbar,Hero,Features,About, Presentation, Download,Contact } from "./Components";
+import './global.scss'
+import { css } from '@emotion/react'
+import { SyncLoader } from "react-spinners";
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // You can also use <link> for styles
+// ..
+AOS.init();
 
 function App() {
+
+  const [loading,setLoading] = useState(false);
+  const override = css`
+    display: flex;
+    margin-top: 16rem;
+    justify-content: center;
+  `;
+  useEffect(() => {
+    setLoading(true)
+    setTimeout(() => {
+      setLoading(false)
+    }, 2000)
+  },[])
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {
+        loading ? <SyncLoader color={"#0099ff"} loading={loading} size={40} css={override}/>
+        :
+        <>
+        <Navbar />
+        <Hero />
+        <Features />
+        <About />
+        <Presentation />
+        <Download />
+        <Contact />
+        </>
+      }
     </div>
   );
 }
